@@ -2,6 +2,9 @@ import React from "react";
 import { Card, CardContent, Typography, Grid } from "@material-ui/core";
 import CountUp from "react-countup";
 import cx from "classnames";
+import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
+import SentimentVerySatisfiedIcon from "@material-ui/icons/SentimentVerySatisfied";
+import MoodBadIcon from "@material-ui/icons/MoodBad";
 
 import styles from "./Cards.module.css";
 
@@ -21,8 +24,13 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cx(styles.card, styles.infected)}
         >
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              color="textSecondary"
+              gutterBottom
+              style={{ display: "flex", marginBottom: 10 }}
+            >
               Infected
+              <MoodBadIcon color="primary" style={{ marginLeft: 8 }} />
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -48,8 +56,15 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cx(styles.card, styles.recovered)}
         >
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              color="textSecondary"
+              gutterBottom
+              style={{ display: "flex", marginBottom: 10 }}
+            >
               Recovered
+              <SentimentVerySatisfiedIcon
+                style={{ color: "green", marginLeft: 8 }}
+              />
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -75,8 +90,16 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
           className={cx(styles.card, styles.deaths)}
         >
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              color="textSecondary"
+              gutterBottom
+              style={{ display: "flex", marginBottom: 10 }}
+            >
               Deaths
+              <SentimentVeryDissatisfiedIcon
+                color="secondary"
+                style={{ marginLeft: 8 }}
+              />
             </Typography>
             <Typography variant="h5">
               <CountUp

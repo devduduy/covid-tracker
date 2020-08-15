@@ -31,7 +31,14 @@ class App extends React.Component {
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />
-        <div style={{ marginTop: "5%", fontFamily: "fantasy" }}>
+        <div
+          style={{
+            marginTop: "5%",
+            marginBottom: "5%",
+            fontFamily: "PT Mono",
+            fontSize: 14,
+          }}
+        >
           <span>Created by :</span>{" "}
           <a
             href="http://instagram.com/yyudhaprmn"

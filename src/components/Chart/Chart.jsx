@@ -57,7 +57,14 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
+        title: {
+          display: true,
+          text: `Current state in ${country}`,
+          fontFamily: "PT Mono",
+        },
+        scales: {
+          xAxes: [{ ticks: { fontFamily: "PT Mono" } }],
+        },
       }}
     />
   ) : null;
